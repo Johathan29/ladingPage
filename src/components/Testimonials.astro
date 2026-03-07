@@ -1,0 +1,413 @@
+---
+import { Image } from "astro:assets";
+import "aos/dist/aos.css";
+import fondoConsultorio from "../assets/fondoAgendaConsultoria.webp";
+---
+
+<script lang="ts">
+  import AOS from "aos";
+  AOS.init({
+    duration: 900,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 120,
+  });
+  const revealElements = document.querySelectorAll(".reveal, .reveal-scale");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+
+  revealElements.forEach((el) => observer.observe(el));
+  // CONTADORES CUANDO APARECEN EN VIEWPORT
+  const counters = document.querySelectorAll(".count-up");
+
+  const counterObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = +counter.dataset.target;
+          const prefix = counter.dataset.prefix || "";
+          const suffix = counter.dataset.suffix || "";
+
+          let current = 0;
+          const increment = target / 80;
+
+          const updateCounter = () => {
+            current += increment;
+
+            if (current < target) {
+              counter.innerText = prefix + Math.ceil(current) + suffix;
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.innerText = prefix + target + suffix;
+            }
+          };
+
+          updateCounter();
+
+          observer.unobserve(counter);
+        }
+      });
+    },
+    { threshold: 0.6 },
+  );
+
+  counters.forEach((counter) => counterObserver.observe(counter));
+</script>
+<section class="flex flex-1 justify-center px-4 md:px-10" id="servicios">
+  <div
+    class="layout-content-container flex flex-col w-full max-w-7xl py-10 border-t border-slate-500 flex-1 gap-16"
+  >
+    <section class="flex flex-col gap-8">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="200"
+        class="text-center max-w-2xl mx-auto reveal-fade-up animate-fade-in-up"
+      >
+        <h2
+          class="font-satoshi text-3xl md:text-4xl font-bold text-primary leading-tight tracking-[-0.015em] mb-4 capitalice mx-8"
+        >
+          Lo que dicen nuestros Clientes
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400">
+          Resultados reales para negocios reales. Descubre cómo hemos ayudado a
+          empresas a escalar con soluciones web de alto rendimiento.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="reveal group card-hover flex flex-col gap-6 text-center rounded-xl bg-[#3c77f529] border border-slate-500 p-8 shadow-sm transition-all"
+        >
+          <div class="flex justify-center mb-2 text-amber-400">
+            <i class="fa-solid fa-star star text-2xl"></i>
+            <i class="fa-solid fa-star star text-2xl"></i>
+            <i class="fa-solid fa-star star text-2xl"></i>
+            <i class="fa-solid fa-star star text-2xl"></i>
+            <i class="fa-solid fa-star star text-2xl"></i>
+          </div>
+          <p
+            class="font-inter text-slate-700 dark:text-slate-300 italic flex-1"
+          >
+            "Aumentaron nuestras conversiones en un 150% en los primeros 3 meses
+            tras el rediseño. El equipo es increíblemente profesional y
+            entienden de negocios, no solo de código."
+          </p>
+          <div class="flex flex-col items-center gap-3">
+            <img
+              alt="Professional woman smiling"
+              class="w-16 h-16 rounded-full object-cover ring-2 ring-primary/20"
+              data-alt="Professional woman smiling portrait"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPXMdTBiX0C1eKmy3m8J-PQgTD1vX0Poe_7Kl6VJDnRFvZ05Nu-NVo07_UPs-ILdREXv975A-qE57xOAgFwnaC4rZy05TYGMhlVPig5oZFCQvOkAylqT6WdLOzBtoAOSYiJG_TtaJVfyH2ZtmT7Ea1aCkwsRN4PGVkngVy-f9g14cdMGi2elPvpUjViJbbmlBbdeNEX6VTEiDu7FFMElurmKTxKMtqfMP1dkxBEnL4fs8DdqPJ0PXNTfnMT5ndREu4rLa7C52R3Y_F"
+            />
+            <div>
+              <p class="font-inter text-base font-bold leading-normal">
+                Laura Méndez
+              </p>
+              <p
+                class="font-inter text-primary text-sm font-medium leading-normal"
+              >
+                CEO, Tech<i class="fa-solid fa-star"></i>t
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          data-aos="fade-up"
+          data-aos-delay="300"
+          class="reveal group card-hover flex flex-col gap-6 text-center rounded-xl bg-[#3c77f529] border border-slate-500 p-8 shadow-sm transition-all"
+        >
+          <div class="flex justify-center mb-2 text-amber-400">
+            <i class="fa-solid fa-star star text-2xl"></i>
+            <i class="fa-solid fa-star star text-2xl"></i>
+            <i class="fa-solid fa-star star text-2xl"></i>
+            <i class="fa-solid fa-star star text-2xl"></i>
+            <i class="fa-solid fa-star star text-2xl"></i>
+          </div>
+          <p
+            class="font-inter text-slate-700 dark:text-slate-300 italic flex-1"
+          >
+            "La velocidad de nuestra nueva plataforma es brutal. Pasamos de
+            tiempos de carga de 5s a menos de 1s. Su dominio de Vue y Supabase
+            es evidente."
+          </p>
+          <div class="flex flex-col items-center gap-3">
+            <img
+              alt="Professional man in suit"
+              class="w-16 h-16 rounded-full object-cover ring-2 ring-primary/20"
+              data-alt="Professional man in suit portrait"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaZHDd_1iN8NAntJ3QORbGfWatkqXqvbaW5HcAsd8tlzAeDLT0fpSJtno7cKLXTfwDVbhccbfk2viqAGeVxI8awAtrz9gunwKIyaWdblb67xodLtNspYy-FOsWbN0auHdX0Emfp2MW2DSa5Y1oo1JhH6l72Q1eRa0y5_n--U3MqCmt1W2CQMNqpFJ8dE3uQp0WwM_COlbvhgS_5ZqIWhmiz77z8yTwdXroQGuZuj7oRYUazSvkwXhI89s2Ywy4nYLfsQdzJ_ZrbGsH"
+            />
+            <div>
+              <p class="font-inter text-base font-bold leading-normal">
+                Carlos Ruiz
+              </p>
+              <p
+                class="font-inter text-primary text-sm font-medium leading-normal"
+              >
+                CTO, E-com Plus
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          data-aos="fade-up"
+          data-aos-delay="400"
+          class="reveal group card-hover flex flex-col gap-6 text-center rounded-xl bg-[#3c77f529] border border-slate-500 p-8 shadow-sm transition-all"
+        >
+          <div class="flex justify-center mb-2 text-amber-400">
+            <i class="fa-solid fa-star star text-2xl"></i>
+            <i class="fa-solid fa-star star text-2xl"></i>
+            <i class="fa-solid fa-star star text-2xl"></i>
+            <i class="fa-solid fa-star star text-2xl"></i>
+            <i class="fa-solid fa-star star text-2xl"></i>
+          </div>
+          <p
+            class="font-inter text-slate-700 dark:text-slate-300 italic flex-1"
+          >
+            "Comunicación fluida y entregas puntuales. Entendieron exactamente
+            la visión estética que buscábamos y la ejecutaron con una UI
+            impecable."
+          </p>
+          <div class="flex flex-col items-center gap-3">
+            <img
+              alt="Creative professional woman"
+              class="w-16 h-16 rounded-full object-cover ring-2 ring-primary/20"
+              data-alt="Creative professional woman portrait"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3x2tF0oWinI-UPmHf4a-vNG5a-43F0HOuX4fCaejbtxdiPg6uAM5xj94vfizXiZWOMQwq34bySSGCteU8MQDvYdbvIGeElPt1wUg-KZMKdgAnlu5GOkPlSbWaOmcCTkkJb8ApkgaLT8mmq83cyj-hbychNx_RJ4P_SK9V29tyHxqnReQm-GQCMiihI41iY2nHLxlsjcl4EEP-ywMuvdfaYKxdr-eE_Yzstj1k05p16LdSjcywbwUlFxX-PQnLZZtVeq_bcdrf-dPX"
+            />
+            <div>
+              <p class="font-inter text-base font-bold leading-normal">
+                Ana Gómez
+              </p>
+              <p
+                class="font-inter text-primary text-sm font-medium leading-normal"
+              >
+                Fundadora, DesignCo
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="flex flex-col gap-8 py-8 border-y border-slate-500">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div
+          class="flex flex-col space-y-4 gap-2 max-w-sm reveal-fade-up animate-fade-in-up mx-8"
+        >
+          <h3 class="text-3xl md:text-4xl font-bold text-primary">
+            Tecnologías de Vanguardia
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400">
+            Construimos con el stack moderno para garantizar escalabilidad,
+            seguridad y rendimiento.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 flex-1 w-full"
+        >
+          <!-- Vue -->
+          <div data-aos="fade-up" data-aos-delay="200" class="tech-card group">
+            <i class="fa-brands fa-vuejs tech-icon"></i>
+            <span class="tech-name">Vue</span>
+          </div>
+
+          <!-- React -->
+          <div data-aos="fade-up" data-aos-delay="300" class="tech-card group">
+            <i class="fa-brands fa-react tech-icon"></i>
+            <span class="tech-name">React</span>
+          </div>
+
+          <!-- Astro -->
+          <div data-aos="fade-up" data-aos-delay="400" class="tech-card group">
+            <i class="fa-solid fa-rocket tech-icon"></i>
+            <span class="tech-name">Astro</span>
+          </div>
+
+          <!-- Tailwind -->
+          <div data-aos="fade-up" data-aos-delay="500" class="tech-card group">
+            <i class="fa-solid fa-wind tech-icon"></i>
+            <span class="tech-name">Tailwind</span>
+          </div>
+
+          <!-- Node -->
+          <div data-aos="fade-up" data-aos-delay="600" class="tech-card group">
+            <i class="fa-brands fa-node-js tech-icon"></i>
+            <span class="tech-name">Node</span>
+          </div>
+
+          <!-- Docker -->
+          <div data-aos="fade-up" data-aos-delay="700" class="tech-card group">
+            <i class="fa-brands fa-docker tech-icon"></i>
+            <span class="tech-name">Docker</span>
+          </div>
+
+          <!-- AWS -->
+          <div data-aos="fade-up" data-aos-delay="800" class="tech-card group">
+            <i class="fa-brands fa-aws tech-icon"></i>
+            <span class="tech-name">AWS</span>
+          </div>
+
+          <!-- Git -->
+          <div data-aos="fade-up" data-aos-delay="900" class="tech-card group">
+            <i class="fa-brands fa-git-alt tech-icon"></i>
+            <span class="tech-name">Git</span>
+          </div>
+
+          <!-- Supabase -->
+          <div data-aos="fade-up" data-aos-delay="1000" class="tech-card group">
+            <i class="fa-solid fa-database tech-icon"></i>
+            <span class="tech-name">Supabase</span>
+          </div>
+
+          <!-- PostgreSQL -->
+          <div data-aos="fade-up" data-aos-delay="1100" class="tech-card group">
+            <i class="fa-solid fa-server tech-icon"></i>
+            <span class="tech-name">PostgreSQL</span>
+          </div>
+
+          <!-- TypeScript -->
+          <div data-aos="fade-up" data-aos-delay="1200" class="tech-card group">
+            <i class="fa-solid fa-code tech-icon"></i>
+            <span class="tech-name">TypeScript</span>
+          </div>
+
+          <!-- Vercel -->
+          <div data-aos="fade-up" data-aos-delay="1300" class="tech-card group">
+            <i class="fa-solid fa-cloud tech-icon"></i>
+            <span class="tech-name">Vercel</span>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-wrap justify-center gap-8 md:gap-16 pt-8 mt-4 border-t border-slate-100 dark:border-slate-800/50"
+      >
+        <div
+          class="reveal-fade-up text-center font-inter animate-fade-in-up"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <p
+            class="font-satoshi text-5xl font-bold text-primary mb-1 count-up"
+            data-prefix="+"
+            data-suffix=""
+            data-target="50"
+          >
+            +50
+          </p>
+          <p
+            class="text-sm text-slate-600 dark:text-slate-400 font-medium uppercase tracking-wider mt-2"
+          >
+            Proyectos Entregados
+          </p>
+        </div>
+        <div
+          class="reveal-fade-up delay-100 text-center font-inter animate-fade-in-up"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <p
+            class="font-satoshi text-5xl font-bold text-primary mb-1 count-up"
+            data-prefix=""
+            data-suffix="%"
+            data-target="99"
+          >
+            99%
+          </p>
+          <p
+            class="text-sm text-slate-600 dark:text-slate-400 font-medium uppercase tracking-wider mt-2"
+          >
+            Clientes Satisfechos
+          </p>
+        </div>
+        <div
+          class="reveal-fade-up delay-200 text-center font-inter animate-fade-in-up"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <p
+            class="font-satoshi text-5xl font-bold text-primary mb-1 count-up"
+            data-prefix=""
+            data-suffix="/7"
+            data-target="24"
+          >
+            24/7
+          </p>
+          <p
+            class="text-sm text-slate-600 dark:text-slate-400 font-medium uppercase tracking-wider mt-2"
+          >
+            Soporte Técnico
+          </p>
+        </div>
+      </div>
+    </section>
+    <section
+      data-aos="fade-up"
+      data-aos-delay="200"
+      class="relative reveal-scale rounded-2xl !bg-gradient-to-br from-[#0b39b969] to-[#0b39b969] border border-slate-400/20 p-10 md:p-16 text-center relative overflow-hidden animate-scale-in"
+    >
+      <Image
+        src={fondoConsultorio}
+        loading="eager"
+        decoding="async"
+        alt="¿Listo para el siguiente nivel?"
+        class="absolute inset-0 w-full h-full object-cover opacity-10"
+      />
+
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-[#0b39b969] to-[#0b39b969]"
+      >
+      </div>
+
+      <div
+        class="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-6"
+      >
+        <h2
+          data-aos="fade-up"
+          data-aos-delay="300"
+          class="font-satoshi text-4xl md:text-5xl font-bold leading-tight"
+        >
+          ¿Listo para el siguiente nivel?
+        </h2>
+        <p
+          data-aos="fade-up"
+          data-aos-delay="400"
+          class="font-inter text-lg text-slate-700 dark:text-slate-300 mb-4"
+        >
+          Agenda una consultoría gratuita de 30 minutos. Analizaremos tu
+          situación actual y te propondremos un plan de acción sin compromiso.
+        </p>
+        <button
+          data-aos="fade-up"
+          data-aos-delay="500"
+          class="group flex items-center gap-2 cursor-pointer justify-center rounded-xl h-14 px-8 bg-primary hover:bg-primary/90 transition-all shadow-lg hover:shadow-[#3c3cf699] text-white text-base font-bold leading-normal font-satoshi"
+        >
+          <span>Agendar Consultoría Gratuita</span>
+          <span class="material-symbols-outlined"
+            ><i
+              class="fa-solid fa-arrow-right raslate-x-0 group-hover:translate-x-2 transition duration-200"
+            ></i></span
+          >
+        </button>
+        <p
+          data-aos="fade-up"
+          data-aos-delay="600"
+          class="font-inter text-sm text-slate-500 dark:text-slate-400 mt-2"
+        >
+          Sin tarjetas de crédito. Sin compromisos a largo plazo.
+        </p>
+      </div>
+    </section>
+  </div>
+</section>

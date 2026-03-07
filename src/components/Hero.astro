@@ -1,0 +1,195 @@
+---
+import "../style.css";
+import { Image } from "astro:assets";
+import hero from '../assets/hero.png?url'
+import perfil1 from '../assets/perfil1.png?url'
+import perfil2 from '../assets/perfil2.png?url'
+import perfil3 from '../assets/perfil3.png?url'
+import "aos/dist/aos.css";
+
+---
+<script >
+  import AOS from "aos";
+  AOS.init({
+    duration: 900,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 120
+  });
+</script>
+<div
+  class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-hidden"
+>
+  <div class="absolute inset-0 -z-20">
+    <Image   width="15rem" height="10rem" loading="eager"
+  decoding="async"
+      alt="Professional Tech Workspace"
+      class="w-full h-full object-cover animate-zoom"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzqP1JmHfXoRmtWD2fkifqfqjl2XzdtxSAtt0Sg1vayHX9W82vHD1jFcBu1unHk0H28we_QCLePsyy1x9NJXjK5APSrKc68l0FnuTrFz9KSjgc3pIaVMEysAE16RpVc9u66hYaOj42WPSSmj1WqDnHxW9OrQsF6j4AIkN45lYr2Zc0YbeGycLTm6C44UFQSz2_2N7ULsU5Zf1lYI0m-UcnwLGGQ0N6VVSCplnjSZZfXeVYioPOau2OTbFRygbEQXUFQIuDhr5Gelo_"
+    />
+  </div>
+  <div class="absolute inset-0 bg-[#022775]/50 -z-10"></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-[#3c3cf633]/20 via-transparent to-transparent -z-10"
+  >
+  </div>
+  <div
+    class="absolute top-0 right-0 w-1/2 h-1/2 bg-[#3c3cf633]/20 blur-[120px] rounded-full -z-10 translate-x-1/4 -translate-y-1/4"
+  >
+  </div>
+
+  <div
+    class="layout-container flex h-full grow flex-col w-full max-w-[1200px] mx-auto px-6 lg:px-10 z-10 pt-24"
+  >
+    <div class="container flex-1 flex flex-col justify-center py-12 md:py-24">
+      <div
+        class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16"
+      >
+        <div class="flex flex-col gap-8 w-full lg:w-1/2">
+          <div class="flex flex-col gap-4 text-left text-white">
+            <h1
+data-aos="fade-up"
+data-aos-delay="100"
+class="text-4xl md:text-5xl lg:text-6xl font-black font-display leading-[1.1] tracking-tight text-white drop-shadow-md"
+>
+              Creamos sitios web que <span
+data-aos="fade-up"
+data-aos-delay="200"
+class="text-primary bg-clip-text bg-gradient-to-r from-[#3c3cf633] to-blue-40"
+>venden por ti 24/7</span
+              >
+            </h1>
+            <p data-aos="fade-up"
+data-aos-delay="200"
+              class="text-base md:text-lg lg:text-xl font-normal leading-relaxed text-slate-300 max-w-xl"
+            >
+              Desarrollamos plataformas digitales de alto rendimiento enfocadas
+              en conversión, velocidad y diseño de vanguardia.
+            </p>
+          </div>
+          <div
+data-aos="fade-up"
+data-aos-delay="200"
+class="flex flex-wrap gap-4"
+>
+            <button
+              class="flex items-center gap-4 justify-center rounded-xl h-12 md:h-14 px-6 md:px-8 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:scale-105 hover:shadow-xl hover:shadow-[#3c3cf633]/40 transition-all duration-300"
+            >
+              <span class="truncate">Solicitar Cotización</span>
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </button>
+            <button
+              class="flex items-center justify-center rounded-xl h-12 md:h-14 px-6 md:px-8 bg-slate-800/80 backdrop-blur-sm text-white text-base font-bold leading-normal tracking-wide hover:bg-slate-700 transition-colors border border-slate-600"
+            >
+              <span class="truncate">Ver Portafolio</span>
+            </button>
+          </div>
+          <div
+            class="flex items-center gap-4 mt-4 pt-4 border-t border-slate-700/50"
+          >
+            <div class="flex -space-x-3">
+              <Image   width="15rem" height="10rem" loading="eager"
+  decoding="async"
+                alt="Client portrait"
+                class="w-10 h-10 rounded-full border-2 border-slate-900 object-cover"
+                data-alt="Client avatar 1"
+                src={perfil1}              />
+              <Image   width="15rem" height="10rem" loading="eager"
+  decoding="async"
+                alt="Client portrait"
+                class="w-10 h-10 rounded-full border-2 border-slate-900 object-cover"
+                data-alt="Client avatar 2"
+                src={perfil2}
+              />
+              <Image   width="15rem" height="10rem" loading="eager"
+  decoding="async"
+                alt="Client portrait"
+                class="w-10 h-10 rounded-full border-2 border-slate-900 object-cover"
+                data-alt="Client avatar 3"
+                src={perfil3}
+              />
+            </div>
+            <div class="text-sm">
+              <div class="font-bold text-white">+50 Proyectos</div>
+              <div class="text-slate-400">Entregados con éxito</div>
+            </div>
+          </div>
+        </div>
+        <div data-aos="fade-up"
+data-aos-delay="280"
+          class="w-full lg:w-1/2 relative animate-fade-scale "
+          style="animation-delay: 0.2s;"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-tr from-[#3c3cf633]/30 to-transparent blur-3xl -z-10 rounded-full"
+          >
+          </div>
+          
+          <div
+            class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-[#3c3cf633]/20 border border-slate-700/50 bg-slate-800/50 group"
+          >
+          
+            <div
+              class="absolute top-0 w-full h-8 bg-slate-900/80 border-b border-slate-700/50 flex items-center px-4 gap-2 z-10"
+            >
+              <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+            </div>
+            <Image   width="15rem" height="10rem" loading="eager"
+  decoding="async"
+              alt="Dashboard Mockup"
+              class="w-full h-full object-cover object-top pt-8   transition-opacity duration-500"
+              data-alt="Sleek dashboard analytics mockup"
+              src={hero}
+            />
+            
+            <div
+              class="absolute bottom-4 -left-4 w-48 h-32 bg-slate-800/90 backdrop-blur-md rounded-xl border border-slate-600/50 shadow-xl p-4 transform -rotate-6 hidden md:block"
+            >
+              <div class="text-xs text-slate-400 mb-1">Conversión Rate</div>
+              <div class="text-2xl font-bold font-display text-white mb-2">
+                +24.8%
+              </div>
+              <div
+                class="w-full h-8 bg-slate-700/50 rounded flex items-end gap-1 px-1"
+              >
+                <div class="w-1/5 bg-[#3c3cf633]/40 h-2 rounded-t"></div>
+                <div class="w-1/5 bg-[#3c3cf633]/60 h-4 rounded-t"></div>
+                <div class="w-1/5 bg-[#3c3cf633]/80 h-5 rounded-t"></div>
+                <div class="w-1/5 bg-[#3c3cf633] h-7 rounded-t"></div>
+                <div class="w-1/5 bg-blue-400 h-8 rounded-t"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pb-8 flex justify-center w-full mt-auto">
+      <a
+  href="#servicios"
+  class="group flex flex-col items-center gap-3 opacity-80 hover:opacity-100 transition-all duration-500"
+>
+  <span
+    class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400 group-hover:text-primary transition"
+  >
+    Descubre más
+  </span>
+
+  <div
+    class="relative bg-gray-400/20 flex items-center justify-center w-12 h-12 rounded-full border border-primary/40 group-hover:border-primary transition-all duration-300"
+  >
+    <!-- Glow -->
+    <div
+      class="absolute inset-0 rounded-full bg-primary/20 blur-md opacity-0 group-hover:opacity-100 transition"
+    ></div>
+
+    <!-- Icon -->
+    <i
+      class="fa-solid fa-arrow-down text-primary text-lg animate-scrollArrow"
+    ></i>
+  </div>
+</a>
+    </div>
+  </div>
+</div>

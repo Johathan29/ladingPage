@@ -1,0 +1,260 @@
+---
+import "aos/dist/aos.css";
+import "../style.css";
+---
+
+<script>
+  import AOS from "aos";
+
+  const initAOS = () => {
+    AOS.init({
+      duration: 900,
+      easing: "ease-out-cubic",
+      once: true,
+    });
+  };
+
+  document.addEventListener("astro:page-load", initAOS);
+  document.addEventListener("DOMContentLoaded", initAOS);
+</script>
+
+<section
+  class="w-full bg-slate-100 dark:bg-slate-900/50 py-20 px-6 sm:px-10 border-b border-slate-200 dark:border-slate-800"
+>
+  <div class="max-w-5xl mx-auto flex flex-col gap-12">
+    <div class="text-center max-w-2xl mx-auto flex flex-col gap-4">
+      <h1
+        data-aos="fade-up"
+        data-aos-delay="100"
+        class="font-display text-primary text-4xl sm:text-5xl font-black leading-tight tracking-tight"
+      >
+        Are you facing these problems
+        <span class="text-white rotating-question">?</span>
+      </h1>
+
+      <p
+        data-aos="fade-up"
+        data-aos-delay="200"
+        class="text-slate-600 dark:text-slate-400 text-lg font-normal leading-relaxed"
+      >
+        Many businesses struggle with their online presence. We identify the
+        bottlenecks and provide tailored solutions.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="100"
+        class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm hover:shadow-md transition-shadow"
+      >
+        <div
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary"
+        >
+          <span class="material-symbols-outlined text-2xl">search_off</span>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <h2
+            class="font-display text-slate-900 dark:text-white text-xl font-bold leading-tight"
+          >
+            ¿Tu negocio no aparece?
+          </h2>
+
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            You're losing potential customers to competitors because your site
+            isn't ranking well on search engines.
+          </p>
+        </div>
+      </div>
+
+      <div
+        data-aos="fade-up"
+        data-aos-delay="200"
+        class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm hover:shadow-md transition-shadow"
+      >
+        <div
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary"
+        >
+          <span class="material-symbols-outlined text-2xl">speed</span>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <h2
+            class="font-display text-slate-900 dark:text-white text-xl font-bold leading-tight"
+          >
+            ¿Web lenta?
+          </h2>
+
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Slow loading speeds are hurting your user experience and increasing
+            your bounce rates significantly.
+          </p>
+        </div>
+      </div>
+
+      <div
+        data-aos="fade-up"
+        data-aos-delay="300"
+        class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm hover:shadow-md transition-shadow"
+      >
+        <div
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary"
+        >
+          <span class="material-symbols-outlined text-2xl">trending_down</span>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <h2
+            class="font-display text-slate-900 dark:text-white text-xl font-bold leading-tight"
+          >
+            ¿No conviertes?
+          </h2>
+
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Your website receives traffic but fails to convert visitors into
+            paying customers or quality leads.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-20 px-6 sm:px-10 bg-[#101022]">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+    <div class="flex-1 flex flex-col gap-8 w-full">
+      <div class="flex flex-col gap-4">
+        <h2
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="font-display text-white w-max p-1 bg-primary rounded-lg border border-[#202b3f] text-sm font-bold tracking-widest uppercase"
+        >
+          Our Approach
+        </h2>
+
+        <h3
+          data-aos="fade-up"
+          data-aos-delay="300"
+          class="font-display text-primary text-3xl sm:text-4xl font-bold leading-tight"
+        >
+          The Solution You Need to Succeed Online
+        </h3>
+
+        <p
+          data-aos="fade-up"
+          data-aos-delay="400"
+          class="text-slate-400 text-lg leading-relaxed"
+        >
+          We build websites that look great, load instantly, and are designed to
+          convert your visitors into loyal customers.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div
+          data-aos="fade-up-right"
+          data-aos-delay="200"
+          class="tech-card group text-primary !rounded-md flex items-center gap-2"
+        >
+          <span class="material-symbols-outlined text-xl">check_circle</span>
+          <span class="text-slate-200 font-medium">Strategic design</span>
+        </div>
+
+        <div
+          data-aos="fade-up"
+          data-aos-delay="300"
+          class="tech-card group text-primary !rounded-md flex items-center gap-2"
+        >
+          <span class="material-symbols-outlined text-xl">check_circle</span>
+          <span class="text-slate-200 font-medium">SEO optimization</span>
+        </div>
+
+        <div
+          data-aos="fade-up"
+          data-aos-delay="400"
+          class="tech-card group text-primary !rounded-md flex items-center gap-2"
+        >
+          <span class="material-symbols-outlined text-xl">check_circle</span>
+          <span class="text-slate-200 font-medium">Ultra-fast speed</span>
+        </div>
+
+        <div
+          data-aos="fade-up"
+          data-aos-delay="500"
+          class="tech-card group text-primary !rounded-md flex items-center gap-2"
+        >
+          <span class="material-symbols-outlined text-xl">check_circle</span>
+          <span class="text-slate-200 font-medium">Real Responsive</span>
+        </div>
+      </div>
+    </div>
+
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="200"
+      class="flex-1 w-full mt-[4rem] min-h-[22.5rem] bg-[#3c77f529] rounded-2xl p-8 sm:p-12 text-center flex flex-col items-center justify-center gap-6 border border-[#1d293d]"
+    >
+      <h4 class="font-display text-white text-2xl font-bold">
+        Ready to transform your online presence?
+      </h4>
+
+      <p class="text-slate-400">
+        Schedule a free consultation call with our team to discuss your project.
+      </p>
+
+      <button
+        class="btn-hover-fill font-display w-full sm:w-auto mt-4 flex min-w-[140px] items-center justify-center rounded-lg h-12 px-8 text-white text-base font-bold cursor-pointer transition-colors duration-300 shadow-lg shadow-blue-500/25"
+      >
+        Let's Talk
+      </button>
+    </div>
+  </div>
+</section>
+<style>
+  .rotating-question {
+    display: inline-block;
+    animation: rotateColors 3s linear infinite;
+  }
+
+  @keyframes rotateColors {
+    0% {
+      transform: rotate(0deg);
+      color: #3c3cf6;
+    }
+
+    33% {
+      color: #22c55e;
+    }
+
+    66% {
+      color: #f59e0b;
+    }
+
+    100% {
+      transform: rotate(360deg);
+      color: #3c3cf6;
+    }
+  }
+  .btn-hover-fill {
+    position: relative;
+    background: #3c77f6;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .btn-hover-fill::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #08102741;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: -1;
+  }
+
+  .btn-hover-fill:hover::before {
+    transform: scaleX(1);
+  }
+</style>
